@@ -1,6 +1,10 @@
-import cv2
-flags = [i for i in dir(cv2) if i.startswith('COLOR_')]
+import adbutils
 
-if __name__ =="__main__":
-    for flag in flags:
-        print(flag)
+import android_boy
+
+if __name__ == '__main__':
+    adb = adbutils.AdbClient('127.0.0.1', 5037)
+    boy_list = []
+    for d in adb.device_list():
+        device = android_boy.AndroidBoy(d.serial, (240, 160))
+        boy_list.append(device)
