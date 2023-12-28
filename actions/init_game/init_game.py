@@ -35,7 +35,6 @@ class InitGame(BaseGame):
                         if self.check_screen('confirm'):
                             self.find_and_click('confirm')
                             sleep(60)
-                            self.waiting()
                             if self.check_screen('game_progress_found'):
                                 self.find_and_click('ok')
                                 sleep(60)
