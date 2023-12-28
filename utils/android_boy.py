@@ -1,17 +1,14 @@
 import math
 from time import sleep
-
 import adbutils
 import cv2
 import numpy as np
 from imutils.object_detection import non_max_suppression
-
-from main import APP_PACKAGE
 from putils import get_project_root
 
 
 class AndroidBoy:
-    def __init__(self, serial, center_point=None, is_joystick_show=False):
+    def __init__(self, serial, center_point=None, is_joystick_show=False, app_package=None):
         """
         Initializes an instance of the AndroidBoy class.
 
@@ -27,7 +24,8 @@ class AndroidBoy:
             self.center_point = center_point
         self.is_joystick_show = is_joystick_show
         self.fail = 0
-        self.app_package = APP_PACKAGE
+        if app_package:
+            self.app_package = app_package
 
     def __reset__(self):
         """
