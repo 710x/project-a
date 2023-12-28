@@ -49,3 +49,5 @@ class InitGame(BaseGame):
                 self.waiting()
 
         return self.check_screen('play') and self.check_screen('4_buttons')
+
+

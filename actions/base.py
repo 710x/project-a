@@ -15,7 +15,6 @@ class BaseGame:
 
     def find_and_click(self, temp, delta=None):
         if delta:
-            print(delta)
             return self.boy.find_and_click(temp=self.res_path(temp), delta=delta)
         return self.boy.find_and_click(temp=self.res_path(temp=temp))
 
