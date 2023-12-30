@@ -8,8 +8,7 @@ from actions.base import BaseGame
 class Play(BaseGame):
     def __init__(self, boy):
         super().__init__(boy, action_name='play')
-        if v:
-            self.v = 60
+        self.v = 60
 
     def finding_game(self):
         while self.check_screen('cancel'):
