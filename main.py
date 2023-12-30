@@ -26,6 +26,6 @@ if __name__ == '__main__':
     for d in adb.device_list():
         bot = Bot(serial=d.serial, app_package=APP_PACKAGE)
         bot.init_game.start_game()
-        if bot.init_game.login():
-            bot.charactor.set_charactor_name("x170")
-            bot.play.start_game_play()
+        bot.init_game.login()
+        bot.charactor.set_charactor_name("x170")
+        bot.play.start_game_play()

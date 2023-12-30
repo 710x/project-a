@@ -1,4 +1,5 @@
 from time import sleep
+
 from actions.base import BaseGame
 
 
@@ -8,7 +9,7 @@ class Charactor(BaseGame):
 
     def set_charactor_name(self, name=None):
         if name and self.find_and_click('options'):
-            sleep(1)
+            sleep(3)
             if self.find_and_click('profile'):
                 if self.find_and_click('charactor_name_input', delta=(130, 20)):
                     sleep(1)
