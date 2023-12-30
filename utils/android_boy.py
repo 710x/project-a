@@ -4,7 +4,7 @@ import adbutils
 import cv2
 import numpy as np
 from imutils.object_detection import non_max_suppression
-from putils import get_project_root
+from utils.putils import get_project_root
 
 
 class AndroidBoy:

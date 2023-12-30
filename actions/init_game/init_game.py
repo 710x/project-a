@@ -15,25 +15,19 @@ class InitGame(BaseGame):
             sleep(60)
 
     def login(self):
-        if self.check_screen('connect'):
-            self.find_and_click('connect')
+        if self.find_and_click('connect'):
             sleep(60)
             self.waiting()
             # self.boy.swipe(start=(30, 640), end=(600, 640))
-            if self.check_screen('google'):
-                self.find_and_click('google')
+            if self.find_and_click('google'):
                 sleep(60)
-                if self.check_screen('vi_use_another_account') or self.check_screen('en_use_another_account'):
-                    self.find_and_click('vi_use_another_account', delta=(0, -60))
-                    self.find_and_click('en_use_another_account', delta=(0, -60))
+                if self.find_and_click('vi_use_another_account', delta=(0, -60)) or self.find_and_click('en_use_another_account',  delta=(0, -60)):
                     sleep(60)
                     while self.check_screen('signing_in'):
                         sleep(60)
-                    if self.check_screen('i_agree'):
-                        self.find_and_click('i_agree')
+                    if self.find_and_click('i_agree'):
                         sleep(60)
-                        if self.check_screen('confirm'):
-                            self.find_and_click('confirm')
+                        if self.find_and_click('confirm'):
                             sleep(60)
                             if self.check_screen('game_progress_found'):
                                 self.find_and_click('ok')
